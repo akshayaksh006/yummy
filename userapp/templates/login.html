@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+
+<html>
+<head>
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+        <h3>Sign in here</h3>
+        <form  method="post" action="login">
+            {% csrf_token %}
+            <div class="inputBox"> <input id="uname" type="text" name="Username" placeholder="Yourname">
+                <input id="pass" type="password" name="Password" placeholder="Password">
+            </div> <input type="submit" name="" value="Login">
+        </form>
+        {% for msg in messages %}
+        <p>{{ msg }}</p>
+        {% endfor %}
+        <a href="#">Forget Password<br> </a>
+        <div class="text-center">
+            <p style="color: #59238F;">Sign-Up</p>
+        </div>
+
+    </div>
+</body>
+</html>
